@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  archivebot:
+    container_name: archivebot
+    build: .
+    env_file:
+      - .env
+    command: ["bundle", "exec", "ruby", "bot.rb"]
+    volumes:
+      - .:/app
+
+volumes:
+  data:
+
