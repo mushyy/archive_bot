@@ -5,6 +5,8 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev software-
 
 RUN apt update && add-apt-repository ppa:tomtomtom/yt-dlp && apt update && apt install -y yt-dlp
 
+RUN apt update && apt install -y pipx && pipx ensurepath && pipx install twitch-dl
+
 WORKDIR /app
 COPY . /app
 
